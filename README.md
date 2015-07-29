@@ -4,8 +4,8 @@ using this api you can.
 -	CreateDevice
 -	View DeviceList
 -	View/Search Device By Ipaddress
-## Installation
 
+## Installation
  go get github.com/saurabh2013/CRPCDemo.git
 
 ## Usage 
