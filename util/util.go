@@ -1,12 +1,13 @@
 package util
 
 import (
-	"api/config"
-	"api/log"
 	"crypto/rand"
 	"fmt"
 	"net"
 	"strings"
+
+	"github.com/saurabh2013/CRPCDemo/config"
+	"github.com/saurabh2013/CRPCDemo/log"
 )
 
 /*
@@ -14,7 +15,7 @@ Genarate New psedulo Guid id as unique identifier.
 */
 func Guid() (uuid string, err error) {
 	b := make([]byte, 16)
-	_, err := rand.Read(b)
+	_, err = rand.Read(b)
 	if err != nil {
 		log.Error(err, nil, "Error while GUID creation")
 		return
