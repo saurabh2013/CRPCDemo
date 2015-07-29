@@ -6,7 +6,7 @@ using this api you can.
 -	View/Search Device By Ipaddress
 
 ## Installation
- go get github.com/saurabh2013/CRPCDemo.git
+ go get github.com/saurabh2013/CRPCDemo
 
 ## Usage 
 
