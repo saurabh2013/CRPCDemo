@@ -1,15 +1,16 @@
 # Device api
 Device api is capable of creating/CIDR device storage and CIDR validation checks.
 using this api you can. 
-### 1. CreateDevice
-### 2. View DeviceList
-### 3. View/Search Device By Ipaddress
+	1. CreateDevice
+ 	2. View DeviceList
+	3. View/Search Device By Ipaddress
 
 ## Usage 
 
-Run binary
-
-Hit these urls
+	1. Run binary
+		Running binary will start api at port :8080
+		
+	2. Try running these urls.
 
 	Crete New Device 
 		http://localhost:8080/CreateDevice?name=printer&desc=device%20one
