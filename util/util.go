@@ -3,28 +3,31 @@ package util
 import (
 	"api/config"
 	"api/log"
+	"crypto/rand"
 	"fmt"
 	"net"
 	"strings"
-
-	"github.com/nu7hatch/gouuid"
 )
 
-  
-
-//Genarate New Guid id as unique identifier.
-func Guid() (string, error) {
-	if u4, err := uuid.NewV4(); err == nil {
-		return u4.String(), nil
-	} else {
-		log.Error(err, nil, "Error while GUID creation") //no context available
-		return "", err
+/*
+Genarate New psedulo Guid id as unique identifier.
+*/
+func Guid() (uuid string, err error) {
+	b := make([]byte, 16)
+	_, err := rand.Read(b)
+	if err != nil {
+		log.Error(err, nil, "Error while GUID creation")
+		return
 	}
+	uuid = fmt.Sprintf("%x-%x-%x-%x-%x", b[0:4], b[4:6], b[6:8], b[8:10], b[10:])
+	return
 }
 
-//Validate Ip Address.
-//	*Should be a valid ip address
-//	*Should be whith in pre apecified range.
+/*
+Validate Ip Address.
+	*Should be a valid ip address
+	*Should be whith in pre apecified range.
+*/
 func ValidateIp(ip string) error {
 
 	if len(strings.TrimSpace(ip)) < 1 {
@@ -37,7 +40,7 @@ func ValidateIp(ip string) error {
 	}
 	_, cidrnet, err := net.ParseCIDR(config.CIDR)
 	if err != nil {
-		return fmt.Errorf("Error in parsing CIDR ip range Err: %s",err)
+		return fmt.Errorf("Error in parsing CIDR ip range Err: %s", err)
 	}
 
 	if !cidrnet.Contains(ipaddr) {
