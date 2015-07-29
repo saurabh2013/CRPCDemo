@@ -1,14 +1,15 @@
 package config
 
 import (
-	"api/consts"
-	"api/log"
 	"bytes"
 	"encoding/json"
+	"fmt"
 	"io/ioutil"
 	"os"
-	"fmt"
 	"path"
+
+	"github.com/saurabh2013/CRPCDemo/consts"
+	"github.com/saurabh2013/CRPCDemo/log"
 )
 
 var CIDR string

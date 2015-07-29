@@ -1,12 +1,12 @@
 package handler
 
 import (
-	"api/consts"
-	"api/log"
-
 	"encoding/json"
 	"fmt"
 	"net/http"
+
+	"github.com/saurabh2013/CRPCDemo/consts"
+	"github.com/saurabh2013/CRPCDemo/log"
 )
 
 func ProcessError(w http.ResponseWriter, r *http.Request, e error) {
@@ -18,14 +18,14 @@ func ProcessError(w http.ResponseWriter, r *http.Request, e error) {
 }
 
 func ProcessResponse(w http.ResponseWriter, r *http.Request, d interface{}) {
-	
+
 	//To process string msgs
 	switch txt := d.(type) {
 	case string:
 		d = map[string]string{"Status": txt}
 		break
 	}
-	
+
 	parseJSON(w, r, d)
 
 }

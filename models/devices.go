@@ -3,7 +3,8 @@ package models
 import (
 	"fmt"
 	"strings"
-	"api/log"
+
+	"github.com/saurabh2013/CRPCDemo/log"
 )
 
 var (
@@ -36,7 +37,7 @@ func (this *Device) CreateDevice() (map[string]interface{}, error) {
 	}
 	d := Device{Id: this.Id, Name: this.Name, Desc: this.Desc, IpAddress: this.IpAddress}
 	Devices = append(Devices, d)
-	log.LogTofilef("Device Created Successfully... Devices: %v",d)
+	log.LogTofilef("Device Created Successfully... Devices: %v", d)
 	return nil, nil
 
 }

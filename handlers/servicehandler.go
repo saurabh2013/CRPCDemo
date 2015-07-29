@@ -1,12 +1,13 @@
 package handler
 
 import (
-	"api/log"
-	"api/models"
-	"api/util"
 	"fmt"
 	"net/http"
 	"net/url"
+
+	"github.com/saurabh2013/CRPCDemo/log"
+	"github.com/saurabh2013/CRPCDemo/models"
+	"github.com/saurabh2013/CRPCDemo/util"
 )
 
 type DeviceHandller struct{}
@@ -36,7 +37,7 @@ func (this *DeviceHandller) CreateDevice(w http.ResponseWriter, r *http.Request)
 			ProcessError(w, r, err)
 		}
 	} else {
-		ProcessResponse(w, r, "Device Created Successfully..")		
+		ProcessResponse(w, r, "Device Created Successfully..")
 	}
 
 	return
@@ -45,7 +46,7 @@ func (this *DeviceHandller) CreateDevice(w http.ResponseWriter, r *http.Request)
 //Get Devices
 func (this *DeviceHandller) GetDevices(w http.ResponseWriter, r *http.Request) {
 	log.Info("Getting Devices")
- 
+
 	d := models.NewDevice()
 	d, e := parseGetReq(r)
 	if e != nil {

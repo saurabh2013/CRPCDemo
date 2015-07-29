@@ -1,13 +1,14 @@
 package main
 
 import (
-	"api/consts"
-	"api/handlers"
-	"api/log"
 	"fmt"
 	syslog "log"
 	"net/http"
-	"api/config"
+
+	"github.com/saurabh2013/CRPCDemo/config"
+	"github.com/saurabh2013/CRPCDemo/consts"
+	"github.com/saurabh2013/CRPCDemo/handlers"
+	"github.com/saurabh2013/CRPCDemo/log"
 )
 
 func main() {
