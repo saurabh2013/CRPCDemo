@@ -16,7 +16,7 @@ using this api you can.
 		
 	2. Try running these urls.
 
-	Crete New Device 
+	-	Crete New Device 
 	
 		http://localhost:8080/CreateDevice?name=printer&desc=device%20one&ipaddress=1.2.2.1
 		http://localhost:8080/CreateDevice?name=printer&desc=device%20one&ipaddress=1.2.2.1
@@ -25,10 +25,10 @@ using this api you can.
 		http://localhost:8080/CreateDevice?name=printer&desc=device%20one
 		http://localhost:8080/CreateDevice?name=printer&desc=device%20one&ipaddress=1.22
 	
-	View Devices
+	-	View Devices
 		http://localhost:8080/DeviceList
 	
-	Search Device
+	-	Search Device
 		http://localhost:8080/DeviceList?ipaddress=1.2.2.1
 
 ## Log
