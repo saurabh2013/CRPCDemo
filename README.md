@@ -7,7 +7,8 @@ using this api you can.
 
 ## Usage 
 
-	1. Run binary
+	1. Compile and Run
+		go run main.go 
 		Running binary will start api at port :8080
 		
 	2. Try running these urls.
